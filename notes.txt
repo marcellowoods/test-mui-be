@@ -1,3 +1,8 @@
 npm init -y
 npm install express
 npm install sequelize sqlite3
+
+
+http.STATUS_CODES
+
+

@@ -12,6 +12,10 @@ app.get('/', (req, res) => {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+const adminRoutes = require('./routes/admin-routes');
+
+app.use('/admin', adminRoutes);
+
 
 sequelize
   .sync()

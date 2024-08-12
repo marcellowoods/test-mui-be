@@ -1,0 +1,8 @@
+@server = http://localhost:3000
+
+###
+# Call this API Endpoint to populate the Products Table
+POST {{server}}/admin/add-products
+content-type: application/json
+
+{}
