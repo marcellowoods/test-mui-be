@@ -1,10 +1,10 @@
 const Product = require('../models/product');
 const products = require('../dummy-data')
 
-exports.postAddProducts = (req, res, next) => {
-  const data = Product.findAll();
-  if(data) {
-    return res.status(202).json({"message": "Data already exists."});
+exports.postAddProducts = async (req, res, next) => {
+  const data = await Product.findOne();
+  if (data) {
+    return res.status(202).json({ "message": "Data already exists." });
   }
   for (let i = 0; i < products.length; i++) {
     const p = products[i];
@@ -14,20 +14,14 @@ exports.postAddProducts = (req, res, next) => {
     const price = p.price;
     const rating = p.rating;
     const brand = p.brand;
-    Product.create({
+    await Product.create({
       title: title,
       category: category,
       price: price,
       rating: rating,
       brand: brand
-    })
-      .then(result => {
-        // console.log(result);
-        console.log('Created Product');
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    });
+    console.log("Created ", title);
   }
   // const title = req.body.title;
   // const category = req.body.category;

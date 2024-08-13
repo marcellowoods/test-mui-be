@@ -15,7 +15,7 @@ const Product = sequelize.define('product', {
   },
   category: {
     type: Sequelize.STRING,
-    allowNull: false
+    allowNull: true
   },
   price: {
     type: Sequelize.DOUBLE,
@@ -23,7 +23,7 @@ const Product = sequelize.define('product', {
   },
   rating: {
     type: Sequelize.DOUBLE,
-    allowNull: false
+    allowNull: true
   },
   
   brand: {

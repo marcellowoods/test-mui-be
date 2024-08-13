@@ -13,8 +13,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 const adminRoutes = require('./routes/admin-routes');
+const shopRoutes  = require('./routes/shop-routes');
 
 app.use('/admin', adminRoutes);
+app.use('/shop', shopRoutes);
 
 
 sequelize

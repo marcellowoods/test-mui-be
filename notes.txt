@@ -1,6 +1,9 @@
+npm i -g nodemon
+
 npm init -y
 npm install express
 npm install sequelize sqlite3
+npm i http-status-codes
 
 
 http.STATUS_CODES
